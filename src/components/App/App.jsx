@@ -10,20 +10,24 @@ import Comment from '../Comment/Comment';
 import Review from '../Review.jsx/Review';
 import Success from '../Success/Success';
 
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
 function App() {
 
   return (
-    <div className='App'>
-      <Header />
-      <Feeling />
-      <Understanding />
-      <Support />
-      <Comment />
-      <Review />
-      <Success />
-    </div>
+    <Router>
+      <div className='App'>
+        <Header />
+
+        <Route path="/" exact component={Feeling} />
+        <Route path="/1" component={Understanding} />
+        <Route path="/2" component={Support} />
+        <Route path="/3" component={Comment} />
+        <Route path="/4" component={Review} />
+        <Route path="/5" component={Success} />
+
+      </div>
+    </Router>
   );
 }
 
