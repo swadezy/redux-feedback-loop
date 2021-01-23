@@ -21,7 +21,7 @@ Server / Redux
 [ ] - 
 
 Misc
-[ ] - Input validation (except comments section)
+[x] - Input validation (except comments section)
 [ ] - 
 
 Stretch

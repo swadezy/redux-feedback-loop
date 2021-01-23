@@ -44,12 +44,22 @@ const commentReducer = (state = '', action) => {
     }
 }
 
+const allFeedbackReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'GET_FEEDBACK':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 const storeInstance = createStore(
     combineReducers({
         feelingReducer,
         understandingReducer,
         supportReducer,
-        commentReducer
+        commentReducer,
+        allFeedbackReducer
     }),
     applyMiddleware(logger)
 )

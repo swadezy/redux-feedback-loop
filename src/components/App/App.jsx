@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import './App.css';
 
 import Header from '../Header/Header';
@@ -9,8 +8,9 @@ import Support from '../Support/Support';
 import Comment from '../Comment/Comment';
 import Review from '../Review.jsx/Review';
 import Success from '../Success/Success';
+import Admin from '../Admin/Admin';
 
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 function App() {
 
@@ -25,6 +25,7 @@ function App() {
         <Route path="/3" component={Comment} />
         <Route path="/4" component={Review} />
         <Route path="/5" component={Success} />
+        <Route path='/admin' component={Admin} />
 
       </div>
     </Router>
