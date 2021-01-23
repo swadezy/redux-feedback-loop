@@ -21,3 +21,13 @@
 h4 {
   font-style: italic;
 }
+
+table {
+  float: center;
+  margin: auto;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}

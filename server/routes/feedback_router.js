@@ -4,7 +4,7 @@ const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
     console.log('in get');
-    const queryText = `SELECT * FROM "feedback";`;
+    const queryText = `SELECT * FROM "feedback" ORDER BY "id" ASC;`;
     pool.query(queryText)
         .then((result) => {
             console.log('received', result.rows);
@@ -39,6 +39,19 @@ router.delete('/:id', (req, res) => {
         }).catch((error) => {
             console.log('received error', error);
             res.sendStatus(500)
+        })
+})
+
+router.put('/:id', (req, res) => {
+    console.log('in put with id', req.params.id);
+    const queryText = `UPDATE "feedback" SET "flagged" = NOT "flagged" WHERE id = $1;`;
+    pool.query(queryText, [req.params.id])
+        .then((result) => {
+            console.log('updated flag status');
+            res.sendStatus(204);
+        }).catch((error) => {
+            console.log('received error', error);
+            res.sendStatus(500);
         })
 })
 

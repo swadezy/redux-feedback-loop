@@ -52,6 +52,16 @@ function Admin() {
         });
     }
 
+    const handleFlag = (id) => {
+        console.log('in handleFlag with id', id);
+        axios.put(`/feedback/${id}`)
+            .then((response) => {
+                getFeedback();
+            }).catch((error) => {
+                console.error(error);
+            })
+    }
+
     return (
         <div>
             <h3>Admin Page</h3>
@@ -62,7 +72,9 @@ function Admin() {
                         <th>Understanding</th>
                         <th>Support</th>
                         <th>Comments</th>
+                        <th>Flagged</th>
                         <th>Delete</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,7 +84,9 @@ function Admin() {
                             <td>{feedback.understanding}</td>
                             <td>{feedback.support}</td>
                             <td>{feedback.comments}</td>
+                            {feedback.flagged ? <td>Y</td> : <td>N</td>}
                             <td><button onClick={() => handleDelete(feedback.id)}>Delete</button></td>
+                            <td><button onClick={() => handleFlag(feedback.id)}>Flag</button></td>
                         </tr>
                     ))}
                 </tbody>
