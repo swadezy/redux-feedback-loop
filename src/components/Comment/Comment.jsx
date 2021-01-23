@@ -17,9 +17,14 @@ function Comment() {
         history.push('/4');
     }
 
+    const handlePrevious = () => {
+        history.push('/2');
+    }
+
     return (
         <form>
             <h3>Any comments you want to leave?</h3>
+            <button onClick={handlePrevious}>Back</button>
             <input
                 placeholder="..."
                 type="text"

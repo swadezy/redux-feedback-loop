@@ -23,10 +23,15 @@ function Understanding() {
         }
     }
 
+    const handlePrevious = () => {
+        history.push('/');
+    }
+
     return (
         <div>
             <h3>How well are you understanding the content?</h3>
             {isSecret ? <h5>Please enter a value between 1 and 5</h5> : <h5></h5>}
+            <button onClick={handlePrevious}>Back</button>
             <input
                 required
                 placeholder="..."

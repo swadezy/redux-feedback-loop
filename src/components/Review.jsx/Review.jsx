@@ -22,6 +22,10 @@ function Review() {
             });
     }
 
+    const handlePrevious = () => {
+        history.push('/3');
+    }
+
     return (
         <div>
             <h3>Review Your Feedback</h3>
@@ -29,6 +33,7 @@ function Review() {
             <h5>Understanding : {understanding}</h5>
             <h5>Support : {support}</h5>
             <h5>Comment : {comments}</h5>
+            <button onClick={handlePrevious}>Back</button>
             <button onClick={handleNext}>Submit</button>
         </div>
     )

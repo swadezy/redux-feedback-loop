@@ -8,7 +8,7 @@ Client
     [x] - Comment
     [x] - Review
     [x] - Success
-    [ ] - 
+    [x] - Header
 [ ] - 
 
 Server / Redux
@@ -25,10 +25,10 @@ Misc
 [ ] - 
 
 Stretch
-[ ] - Admin component
-    [ ] - Get request feedback from db
-    [ ] - Delete requests
-    [ ] - Flag for further review
+[x] - Admin component
+    [x] - Get request feedback from db
+    [x] - Delete requests
+    [x] - Flag for further review
 [ ] - Update scores
 [ ] - Material UI
 [ ] - Heroku deployment

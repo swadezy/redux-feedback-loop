@@ -23,10 +23,15 @@ function Support() {
         }
     }
 
+    const handlePrevious = () => {
+        history.push('/1');
+    }
+
     return (
         <div>
             <h3>How well are you being supported?</h3>
             {isSecret ? <h5>Please enter a value between 1 and 5</h5> : <h5></h5>}
+            <button onClick={handlePrevious}>Back</button>
             <input
                 required
                 placeholder="..."
