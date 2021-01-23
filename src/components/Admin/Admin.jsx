@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import swal from 'sweetalert';
 
 function Admin() {
 
@@ -28,12 +29,27 @@ function Admin() {
 
     const handleDelete = (id) => {
         console.log('in handleDelete with id', id);
-        axios.delete(`/feedback/${id}`)
-            .then((response) => {
-                getFeedback();
-            }).catch((error) => {
-                console.error(error);
-            })
+        swal({
+            title: 'Delete',
+            text: 'Are you certain you want to delete this?',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                swal('Feedback deleted.', {
+                    icon: 'success',
+                });
+                axios.delete(`/feedback/${id}`)
+                    .then((response) => {
+                        getFeedback();
+                    }).catch((error) => {
+                        console.error(error);
+                    })
+            } else {
+                swal('Good call, that was probably really valuable feedback!');
+            }
+        });
     }
 
     return (
