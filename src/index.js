@@ -9,19 +9,39 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
 const feelingReducer = (state = 0, action) => {
-    return state;
+    switch (action.type) {
+        case 'SET_FEELING':
+            return action.payload;
+        default:
+            return state;
+    }
 }
 
 const understandingReducer = (state = 0, action) => {
-    return state;
+    switch (action.type) {
+        case 'SET_UNDERSTANDING':
+            return action.payload;
+        default:
+            return state;
+    }
 }
 
 const supportReducer = (state = 0, action) => {
-    return state;
+    switch (action.type) {
+        case 'SET_SUPPORT':
+            return action.payload;
+        default:
+            return state;
+    }
 }
 
-const commentReducer = (state = 0, action) => {
-    return state;
+const commentReducer = (state = '', action) => {
+    switch (action.type) {
+        case 'SET_COMMENT':
+            return action.payload;
+        default:
+            return state;
+    }
 }
 
 const storeInstance = createStore(
