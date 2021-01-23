@@ -2,22 +2,22 @@
 
 Client
 [ ] - Create components
-    [ ] - Feeling
-    [ ] - Understanding
-    [ ] - Support
-    [ ] - Comment
-    [ ] - Review
-    [ ] - Success
+    [x] - Feeling
+    [x] - Understanding
+    [x] - Support
+    [x] - Comment
+    [x] - Review
+    [x] - Success
     [ ] - 
 [ ] - 
 
 Server / Redux
-[ ] - State variables
-    [ ] - Feeling
-    [ ] - Understanding
-    [ ] - Support
-    [ ] - Comment
-[ ] - Post to server to db
+[x] - State variables
+    [x] - Feeling
+    [x] - Understanding
+    [x] - Support
+    [x] - Comment
+[x] - Post to server to db
 [ ] - 
 
 Misc

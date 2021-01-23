@@ -4,30 +4,38 @@ import { useHistory } from 'react-router-dom';
 
 function Support() {
 
-    const [support, setSupport] = useState(0);
+    const [support, setSupport] = useState('');
+    const [isSecret, setIsSecret] = useState(false);
     const dispatch = useDispatch();
     const history = useHistory();
 
     const handleNext = () => {
-        const action = {
-            type: 'SET_SUPPORT',
-            payload: support
-        };
-        dispatch(action);
-        history.push('/3');
+        if (support > 0 && support < 6) {
+            const action = {
+                type: 'SET_SUPPORT',
+                payload: support
+            };
+            dispatch(action);
+            history.push('/3');
+        } else {
+            setSupport('');
+            setIsSecret(true);
+        }
     }
 
     return (
-        <form>
+        <div>
             <h3>How well are you being supported?</h3>
+            {isSecret ? <h5>Please enter a value between 1 and 5</h5> : <h5></h5>}
             <input
+                required
                 placeholder="..."
                 type="number"
                 value={support}
                 onChange={(event) => setSupport(event.target.value)}
             />
             <button onClick={handleNext}>Next</button>
-        </form>
+        </div>
     )
 }
 
