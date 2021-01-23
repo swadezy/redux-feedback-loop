@@ -29,6 +29,6 @@ Stretch
     [x] - Get request feedback from db
     [x] - Delete requests
     [x] - Flag for further review
-[ ] - Update scores
+[x] - Update scores
 [ ] - Material UI
 [ ] - Heroku deployment

@@ -4,6 +4,10 @@ function Header() {
 
     const history = useHistory();
 
+    const routeHome = () => {
+        history.push('/')
+    }
+
     const routeAdmin = () => {
         history.push('/admin')
     }
@@ -11,6 +15,7 @@ function Header() {
     return (
         <header className='App-header'>
             <h1 className='App-title'>Feedback!</h1>
+            <button onClick={routeHome}>Home</button>
             <button onClick={routeAdmin}>Admin</button>
         </header>
     )
